@@ -1,93 +1,18 @@
-import "./App.css";
-import React, { useState } from "react";
+import React from "react";
+import Calc from "./comps/Calc";
+import Navbar from "./comps/Navbar";
+import CenterDiv from "./flexbox/CenterDiv";
+import Flexbox from "./flexbox/Flexbox";
 
-function App() {
-  const [result, setResult] = useState("");
-
-  const handleClick = (e) => {
-    setResult(result.concat(e.target.value));
-  };
-  const AC = () => {
-    setResult("");
-  };
-  const del = () => {
-    setResult(result.slice(0, result.length - 1));
-  };
-  const equal = () => {
-    try {
-      setResult(eval(result));
-    } catch {
-      setResult("error");
-    }
-  };
+const App = () => {
   return (
-    <div className="cont">
-      <div className="app">
-        <div className="one">
-          <form>
-            <input type="text" value={result} />
-          </form>
-        </div>
-
-        <div className="btn">
-          <button className="ac span2" onClick={AC}>
-            AC
-          </button>
-          <button onClick={del} value="">
-            Del
-          </button>
-          <button onClick={handleClick} value="/">
-            &divide;
-          </button>
-          <button onClick={handleClick} value="7">
-            7
-          </button>
-          <button onClick={handleClick} value="8">
-            8
-          </button>
-          <button onClick={handleClick} value="9">
-            9
-          </button>
-          <button onClick={handleClick} value="*">
-            &times;
-          </button>
-          <button onClick={handleClick} value="4">
-            4
-          </button>
-          <button onClick={handleClick} value="5">
-            5
-          </button>
-          <button onClick={handleClick} value="6">
-            6
-          </button>
-          <button onClick={handleClick} value="-">
-            -
-          </button>
-          <button onClick={handleClick} value="1">
-            1
-          </button>
-          <button onClick={handleClick} value="2">
-            2
-          </button>
-          <button onClick={handleClick} value="3">
-            3
-          </button>
-          <button onClick={handleClick} value="+">
-            +
-          </button>
-          <button onClick={handleClick} value="0">
-            0
-          </button>
-          <button onClick={handleClick} value=".">
-            .
-          </button>
-          <button onClick={equal} className="span2">
-            =
-          </button>
-        </div>
-      </div>
+    <div>
+      {/* <Navbar />
+      <Calc /> */}
+      {/* <Flexbox /> */}
+      <CenterDiv />
     </div>
   );
-}
+};
 
 export default App;
